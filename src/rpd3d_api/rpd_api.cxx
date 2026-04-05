@@ -26,6 +26,13 @@ void RPD3D_GPU::set_spheres(std::vector<MedialSphere>* _all_medial_spheres) {
   this->all_medial_spheres = _all_medial_spheres;
 }
 
+void RPD3D_GPU::release_pointers() {
+  tet_mesh = nullptr;
+  sf_mesh = nullptr;
+  params = nullptr;
+  all_medial_spheres = nullptr;
+}
+
 // ------------------------------------------------------------------------------------
 // public functions
 // ------------------------------------------------------------------------------------

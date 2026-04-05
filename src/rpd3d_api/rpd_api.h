@@ -12,6 +12,7 @@ class RPD3D_GPU {
   void init(const TetMesh* _tet_mesh, const SurfaceMesh* _sf_mesh,
             const Parameter* _params);
   void set_spheres(std::vector<MedialSphere>* _all_medial_spheres);
+  void release_pointers();
 
  public:
   void calculate();
