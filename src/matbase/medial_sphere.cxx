@@ -249,12 +249,14 @@ bool TangentConcaveLine::update_covered_sf_fids(const SurfaceMesh& sf_mesh,
                                                 int k) {
   this->sf_fids_covered_two.clear();
   this->sf_fids_covered_two.resize(2);
+  bool result = false;
   for (int i = 0; i < 2; i++) {  // two adjacent fids
     int adj_fid = this->adj_sf_fs_pair[i];
     assert(adj_fid >= 0);
-    sf_mesh.collect_kring_neighbors_given_fid(k, adj_fid,
+    result |= sf_mesh.collect_kring_neighbors_given_fid(k, adj_fid,
                                               this->sf_fids_covered_two[i]);
   }
+  return result;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////

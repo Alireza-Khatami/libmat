@@ -763,6 +763,7 @@ bool save_sf_mesh_with_extf(const std::string sf_path,
   }
   fout.close();
   printf("saved sf_mesh with extf at: %s \n", sf_path.c_str());
+  return true;
 }
 
 bool save_sf_mesh_scaled_01(const std::string sf_path_scaled,
